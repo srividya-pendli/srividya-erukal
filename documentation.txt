@@ -1,0 +1,54 @@
+STEP 1 :
+   * list only java files
+PROGRAM:-
+     for singleitem in `ls *java`
+       do
+      echo $singleitem
+   done
+OUTPUT :-
+   add.java
+By using this logic we will get sub.js, multiply.py, division.cs
+      
+
+STEP 2:
+   * find the name of the javafile
+PROGRAM:-
+   for singleitem in `ls *.java`
+   do
+    nameoffile=`echo $singleitem | awk -F. '{print $1}'`
+    echo $nameoffile
+  done
+OUTPUT:-
+  add
+  By using this logic we will get sub, multiply, division
+
+
+STEP 3:-
+   *  create a folder with same name as file name
+PROGRAM:-
+  for singleitem in `ls *.java`
+  do
+    nameoffile=`echo $singleitem | awk -F. '{print $2}'`
+    mkdir $nameoffile
+  done
+OUTPUT:-
+  java folder will created
+  By using this logic we will get js,py,cs
+
+
+STEP 4:-
+  * copy a java file & paste  into specific folders
+   
+PROGRAM:-
+ for singleitem in `ls *.java`
+ do 
+  nameoffile=`echo $singleitem | awk -F. '{print $2}'`
+  mv $singleitem $nameoffile
+ done
+ OUTPUT:-
+ add.java is pasted into java folder and original file will be deleted
+ by using this logic we will get sub.js, multiply.py, division.cs 
+
+
+    
+
